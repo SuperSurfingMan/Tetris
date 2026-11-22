@@ -15,60 +15,60 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sources.cpp">
+    <ClCompile Include="src\Sources.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="buttons.cpp">
+    <ClCompile Include="src\buttons.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="blocks.cpp">
+    <ClCompile Include="src\blocks.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="shows.cpp">
+    <ClCompile Include="src\shows.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="switch.cpp">
+    <ClCompile Include="src\switch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="block1.cpp">
+    <ClCompile Include="src\block1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="block2.cpp">
+    <ClCompile Include="src\block2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="block3.cpp">
+    <ClCompile Include="src\block3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="block4.cpp">
+    <ClCompile Include="src\block4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="block5.cpp">
+    <ClCompile Include="src\block5.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="others.cpp">
+    <ClCompile Include="src\others.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="create_LineButtons.cpp">
+    <ClCompile Include="src\create_LineButtons.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="buttons.h">
+    <ClInclude Include="src\buttons.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="blocks.h">
+    <ClInclude Include="src\blocks.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="shows.h">
+    <ClInclude Include="src\shows.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="switch.h">
+    <ClInclude Include="src\switch.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="others.h">
+    <ClInclude Include="src\others.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="create_LineButtons.h">
+    <ClInclude Include="src\create_LineButtons.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>

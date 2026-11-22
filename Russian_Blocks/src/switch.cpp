@@ -4,13 +4,13 @@ int funSwitch::state_ = 1;
 void funSwitch::state_off()
 {
 	IMAGE close;
-	loadimage(&close, "close.jpg", lo_x, lo_y);
+	loadimage(&close, "./assets/images/close.jpg", lo_x, lo_y);
 	putimage(dis_x, dis_y, &close);
 }
 void funSwitch::state_on()
 {
 	IMAGE open;
-	loadimage(&open, "open.jpg", lo_x, lo_y);
+	loadimage(&open, "./assets/images/open.jpg", lo_x, lo_y);
 	putimage(dis_x, dis_y, &open);
 }
 void funSwitch::switch_on()
@@ -23,17 +23,17 @@ void funSwitch::switch_on()
 	IMAGE P7;	IMAGE P8;
 	IMAGE P9;	IMAGE P10;
 	IMAGE P11;
-	loadimage(&P1, "P1.jpg", lo_x, lo_y);
-	loadimage(&P2, "P2.jpg", lo_x, lo_y);
-	loadimage(&P3, "P3.jpg", lo_x, lo_y);
-	loadimage(&P4, "P4.jpg", lo_x, lo_y);
-	loadimage(&P5, "P5.jpg", lo_x, lo_y);
-	loadimage(&P6, "P6.jpg", lo_x, lo_y);
-	loadimage(&P7, "P7.jpg", lo_x, lo_y);
-	loadimage(&P8, "P8.jpg", lo_x, lo_y);
-	loadimage(&P9, "P9.jpg", lo_x, lo_y);
-	loadimage(&P10, "P10.jpg", lo_x, lo_y);
-	loadimage(&P11, "P11.jpg", lo_x, lo_y);
+	loadimage(&P1, "./assets/images/P1.jpg", lo_x, lo_y);
+	loadimage(&P2, "./assets/images/P2.jpg", lo_x, lo_y);
+	loadimage(&P3, "./assets/images/P3.jpg", lo_x, lo_y);
+	loadimage(&P4, "./assets/images/P4.jpg", lo_x, lo_y);
+	loadimage(&P5, "./assets/images/P5.jpg", lo_x, lo_y);
+	loadimage(&P6, "./assets/images/P6.jpg", lo_x, lo_y);
+	loadimage(&P7, "./assets/images/P7.jpg", lo_x, lo_y);
+	loadimage(&P8, "./assets/images/P8.jpg", lo_x, lo_y);
+	loadimage(&P9, "./assets/images/P9.jpg", lo_x, lo_y);
+	loadimage(&P10, "./assets/images/P10.jpg", lo_x, lo_y);
+	loadimage(&P11, "./assets/images/P11.jpg", lo_x, lo_y);
 
 	putimage(dis_x, dis_y, &P1);
 	Sleep(delay);
@@ -66,14 +66,14 @@ void funSwitch::switch_off()
 	IMAGE P3;	IMAGE P4;
 	IMAGE P5;	IMAGE P6;
 	IMAGE P7;	IMAGE P8;
-	loadimage(&P1, "_P1.jpg", lo_x, lo_y);
-	loadimage(&P2, "_P2.jpg", lo_x, lo_y);
-	loadimage(&P3, "_P3.jpg", lo_x, lo_y);
-	loadimage(&P4, "_P4.jpg", lo_x, lo_y);
-	loadimage(&P5, "_P5.jpg", lo_x, lo_y);
-	loadimage(&P6, "_P6.jpg", lo_x, lo_y);
-	loadimage(&P7, "_P7.jpg", lo_x, lo_y);
-	loadimage(&P8, "_P8.jpg", lo_x, lo_y);
+	loadimage(&P1, "./assets/images/_P1.jpg", lo_x, lo_y);
+	loadimage(&P2, "./assets/images/_P2.jpg", lo_x, lo_y);
+	loadimage(&P3, "./assets/images/_P3.jpg", lo_x, lo_y);
+	loadimage(&P4, "./assets/images/_P4.jpg", lo_x, lo_y);
+	loadimage(&P5, "./assets/images/_P5.jpg", lo_x, lo_y);
+	loadimage(&P6, "./assets/images/_P6.jpg", lo_x, lo_y);
+	loadimage(&P7, "./assets/images/_P7.jpg", lo_x, lo_y);
+	loadimage(&P8, "./assets/images/_P8.jpg", lo_x, lo_y);
 	putimage(dis_x, dis_y, &P1);
 	Sleep(delay);
 	putimage(dis_x, dis_y, &P2);

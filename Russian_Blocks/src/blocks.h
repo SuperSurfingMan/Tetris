@@ -28,7 +28,7 @@ protected:
 	IMAGE block;
 	shapes()
 	{
-		loadimage(&block, "./g_block.jpg", load_size, load_size);
+		loadimage(&block, "./assets/images/g_block.jpg", load_size, load_size);
 	}
 	//创建单个方块,选择需要导入的方块图片
 	static int load_size;//设置方块的实际分辨率
@@ -77,7 +77,7 @@ protected:
 			{
 				cls++;
 				mciSendString("close clear", 0, 0, 0);
-				mciSendString("open ./clear.wav alias clear", 0, 0, 0);
+				mciSendString("open ./assets/audio/clear.wav alias clear", 0, 0, 0);
 				mciSendString("play clear", 0, 0, 0);
 				for (int i = j; i >= 0; i--)
 				{
@@ -168,7 +168,7 @@ public:
 	void show_map()
 	{
 		IMAGE map_block;
-		loadimage(&map_block, "./b_block.jpg", load_size, load_size);//显示蓝色的方块
+		loadimage(&map_block, "./assets/images/b_block.jpg", load_size, load_size);//显示蓝色的方块
 		for (int i = 0; i < map_x; i++)
 		{
 			for (int j = 0; j < map_y; j++)

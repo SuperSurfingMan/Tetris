@@ -11,7 +11,7 @@
 using namespace std;
 void show_main_menu()
 {
-	mciSendString("open ./main_.mp3 alias main", 0, 0, 0);
+	mciSendString("open ./assets/audio/main_.mp3 alias main", 0, 0, 0);
 	//mciSendString("setaudio main volume to 100", 0, 0, 0);
 	mciSendString("play main repeat", 0, 0, 0);
 	if(funSwitch::getState())
@@ -20,14 +20,14 @@ void show_main_menu()
 		mciSendString("setaudio main volume to 0", 0, 0, 0);
 
 	IMAGE main_bk;
-	loadimage(&main_bk, "./new_bbbk.jpg", 400, 710);
+	loadimage(&main_bk, "./assets/images/new_bbbk.jpg", 400, 710);
 	cleardevice();
 	putimage(0, 0, &main_bk);
 }
 void show_maker()
 {
 	IMAGE settings;
-	loadimage(&settings, "./settings.jpg", 400, 710);
+	loadimage(&settings, "./assets/images/settings.jpg", 400, 710);
 
 	const char* relevant_info = "关于此游戏";
 	const char* relevant_name = "俄罗斯方块";
@@ -48,7 +48,7 @@ void show_maker()
 void showGameBk()
 {
 	IMAGE bkPicture;
-	loadimage(&bkPicture, "./wooden_bk.png", 400, 710);
+	loadimage(&bkPicture, "./assets/images/wooden_bk.png", 400, 710);
 	cleardevice();
 	putimage(0, 0, &bkPicture);
 }
@@ -83,7 +83,7 @@ void show_score()//显示游戏中的实时分数
 void show_coming_blocks(int n)//显示下一个方块
 {
 	IMAGE c_block;
-	loadimage(&c_block, "./g_block.jpg", 20, 20);
+	loadimage(&c_block, "./assets/images/g_block.jpg", 20, 20);
 	const int c_x = 180;
 	const int c_y = 590;
 	const int width = 115;
@@ -131,7 +131,7 @@ void show_coming_blocks(int n)//显示下一个方块
 void settings()//设置界面
 {
 	IMAGE settings;
-	loadimage(&settings, "./settings.jpg", 400, 710);
+	loadimage(&settings, "./assets/images/settings.jpg", 400, 710);
 	cleardevice();
 	putimage(0, 0, &settings);
 
@@ -142,7 +142,7 @@ void settings()//设置界面
 void before_start()//选择游戏模式，新游戏或载入存档
 {
 	IMAGE settings;
-	loadimage(&settings, "./settings.jpg", 400, 710);
+	loadimage(&settings, "./assets/images/settings.jpg", 400, 710);
 	cleardevice();
 	putimage(0, 0, &settings);
 	vector<button> game;
@@ -155,20 +155,20 @@ void game_pause(int p)//展示游戏进行时停止键的按键效果
 	if (p == 0)
 	{
 		IMAGE menu;
-		loadimage(&menu, "./pause.png", 50, 50);
+		loadimage(&menu, "./assets/images/pause.png", 50, 50);
 		putimage(320, 600, &menu);
 	}
 	else
 	{
 		IMAGE menu;
-		loadimage(&menu, "./pause2.png", 50, 50);
+		loadimage(&menu, "./assets/images/pause2.png", 50, 50);
 		putimage(320, 600, &menu);
 	}
 }
 void pausing_game()//游戏暂停状态下的界面
 {
 	IMAGE PAUSE;
-	loadimage(&PAUSE, "./PAUSE_.png", 300, 500);
+	loadimage(&PAUSE, "./assets/images/PAUSE_.png", 300, 500);
 	putimage(50, 50, &PAUSE);
 	vector<button> pause;
 	pause_button(pause);
@@ -193,7 +193,7 @@ void save_and_back()
 }
 void detail_load()//载入存档，进入存档信息界面
 {
-	ifstream Load("records.dat", ios::in | ios::out | ios::binary);
+	ifstream Load("data/records.dat", ios::in | ios::out | ios::binary);
 	HWND hnd = GetHWnd();
 	if (!Load)
 	{
@@ -250,7 +250,7 @@ void detail_load()//载入存档，进入存档信息界面
 void select_mode()//选择游戏模式界面
 {
 	IMAGE settings;
-	loadimage(&settings, "./settings.jpg", 400, 710);
+	loadimage(&settings, "./assets/images/settings.jpg", 400, 710);
 	cleardevice();
 	putimage(0, 0, &settings);
 
@@ -260,7 +260,7 @@ void select_mode()//选择游戏模式界面
 }
 void manage_file()
 {
-	ifstream Load("records.dat", ios::in | ios::out | ios::binary);
+	ifstream Load("data/records.dat", ios::in | ios::out | ios::binary);
 	HWND hnd = GetHWnd();
 	if (!Load)
 	{
@@ -323,7 +323,7 @@ void manage_file()
 }
 void initialkeys()
 {
-	ofstream OutScores("keys.dat", ios::out | ios::binary);
+	ofstream OutScores("data/keys.dat", ios::out | ios::binary);
 	allkeys blank;
 	OutScores.write(reinterpret_cast<const char*>(&blank), sizeof(allkeys));
 	OutScores.close();

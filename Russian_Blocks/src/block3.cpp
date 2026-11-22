@@ -72,7 +72,7 @@ void block3::speed_up()
 	if (y1 + load_size <= stop && y2 + load_size <= stop && y3 + load_size <= stop && y4 + load_size <= stop && !map[x1 / load_size][y1 / load_size + 1] && !map[x2 / load_size][y2 / load_size + 1] && !map[x3 / load_size][y3 / load_size + 1] && !map[x4 / load_size][y4 / load_size + 1])
 	{
 		mciSendString("close drop", 0, 0, 0);
-		mciSendString("open ./drop.wav alias drop", 0, 0, 0);
+		mciSendString("open ./assets/audio/drop.wav alias drop", 0, 0, 0);
 		mciSendString("play drop", 0, 0, 0);
 		y1 += load_size; y2 += load_size; y3 += load_size; y4 += load_size; 
 	}
@@ -98,7 +98,7 @@ void block3::putimages()
 void block3::refreshmap()
 {		
 	mciSendString("close hit", 0, 0, 0);
-	mciSendString("open ./hit.wav alias hit", 0, 0, 0);
+	mciSendString("open ./assets/audio/hit.wav alias hit", 0, 0, 0);
 	mciSendString("play hit", 0, 0, 0);
 	int a1 = x1 / load_size; int b1 = y1 / load_size;
 	int a2 = x2 / load_size; int b2 = y2 / load_size;

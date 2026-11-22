@@ -11,7 +11,7 @@ void start_game()
 {
 	loadkeys();
 	mciSendString("close main", 0, 0, 0);
-	mciSendString("open ./gaming.mp3 alias gaming", 0, 0, 0);
+	mciSendString("open ./assets/audio/gaming.mp3 alias gaming", 0, 0, 0);
 	mciSendString("play gaming repeat", 0, 0, 0);
 	if (!funSwitch::getGame())
 	{
@@ -61,7 +61,7 @@ void start_game()
 		if (shapes::game_over())//通过游戏结束判断退出
 		{
 			mciSendString("close gaming", 0, 0, 0);
-			mciSendString("open ./lose.wav alias lose", 0, 0, 0);
+			mciSendString("open ./assets/audio/lose.wav alias lose", 0, 0, 0);
 			mciSendString("play lose", 0, 0, 0);
 			save_score();
 			delete newblock;
@@ -121,7 +121,7 @@ void m_easy()
 void save_game()
 {
 	HWND hnd = GetHWnd();
-	ifstream ReadRecord("records.dat", ios::in | ios::binary);
+	ifstream ReadRecord("data/records.dat", ios::in | ios::binary);
 	store reader;
 	int i = 0;
 	while (ReadRecord && !ReadRecord.eof())
@@ -135,7 +135,7 @@ void save_game()
 	}
 	ReadRecord.close();
 	//找到空位并用i记录
-	ofstream OutRecord("records.dat", ios::in | ios::out | ios::binary);
+	ofstream OutRecord("data/records.dat", ios::in | ios::out | ios::binary);
 	if (!OutRecord)
 	{
 		MessageBox(hnd, "打开文件发生错误!", "提示", MB_OK);
@@ -157,7 +157,7 @@ void save_game()
 void initialRecord()//初始化存档记录
 {
 	//写入十条没用的空记录
-	ofstream OutRecord("records.dat", ios::out | ios::binary);
+	ofstream OutRecord("data/records.dat", ios::out | ios::binary);
 	if (!OutRecord)
 	{
 		abort();
@@ -171,7 +171,7 @@ void initialRecord()//初始化存档记录
 }
 void reload_game(int i)//按下加载游戏之后执行此函数,根据传入参数判断打开哪一个存档
 {
-	fstream Load("records.dat", ios::in | ios::out | ios::binary);
+	fstream Load("data/records.dat", ios::in | ios::out | ios::binary);
 	HWND hnd = GetHWnd();
 	if (!Load)
 	{
@@ -220,7 +220,7 @@ void delete_file(int j)//删除指定位置的存档
 		return;
 	store blank;
 	HWND hnd = GetHWnd();
-	ofstream OutRecord("records.dat", ios::in | ios::out | ios::binary);
+	ofstream OutRecord("data/records.dat", ios::in | ios::out | ios::binary);
 	if (!OutRecord)
 	{
 		MessageBox(hnd, "打开文件发生错误!", "提示", MB_OK);
@@ -233,7 +233,7 @@ void delete_file(int j)//删除指定位置的存档
 }
 void key_settings()//用户自定义操作键
 {
-	fstream openfile("keys.dat", ios::in | ios::out | ios::binary);
+	fstream openfile("data/keys.dat", ios::in | ios::out | ios::binary);
 	allkeys newkeys;
 	openfile.read(reinterpret_cast<char*>(&newkeys), sizeof(allkeys));
 	openfile.close();
@@ -304,7 +304,7 @@ void key_settings()//用户自定义操作键
 		}
 	}
 	allkeys loadkeys(keys[0], keys[1], keys[2], keys[3], keys[4]);
-	ofstream defkeys("keys.dat", ios::in | ios::out | ios::binary);
+	ofstream defkeys("data/keys.dat", ios::in | ios::out | ios::binary);
 	defkeys.write(reinterpret_cast<const char*>(&loadkeys), sizeof(allkeys));
 	defkeys.close();
 	HWND hnd = GetHWnd();
@@ -312,7 +312,7 @@ void key_settings()//用户自定义操作键
 }
 void loadkeys()
 {
-	fstream openfile("keys.dat", ios::in | ios::out | ios::binary);
+	fstream openfile("data/keys.dat", ios::in | ios::out | ios::binary);
 	allkeys inkeys;
 	openfile.read(reinterpret_cast<char*>(&inkeys), sizeof(allkeys));
 	openfile.close();

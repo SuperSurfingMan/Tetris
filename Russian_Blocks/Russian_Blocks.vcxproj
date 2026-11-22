@@ -136,26 +136,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="block1.cpp" />
-    <ClCompile Include="block2.cpp" />
-    <ClCompile Include="block3.cpp" />
-    <ClCompile Include="block4.cpp" />
-    <ClCompile Include="block5.cpp" />
-    <ClCompile Include="create_LineButtons.cpp" />
-    <ClCompile Include="others.cpp" />
-    <ClCompile Include="shows.cpp" />
-    <ClCompile Include="Sources.cpp" />
-    <ClCompile Include="buttons.cpp" />
-    <ClCompile Include="blocks.cpp" />
-    <ClCompile Include="switch.cpp" />
+    <ClCompile Include="src\block1.cpp" />
+    <ClCompile Include="src\block2.cpp" />
+    <ClCompile Include="src\block3.cpp" />
+    <ClCompile Include="src\block4.cpp" />
+    <ClCompile Include="src\block5.cpp" />
+    <ClCompile Include="src\create_LineButtons.cpp" />
+    <ClCompile Include="src\others.cpp" />
+    <ClCompile Include="src\shows.cpp" />
+    <ClCompile Include="src\Sources.cpp" />
+    <ClCompile Include="src\buttons.cpp" />
+    <ClCompile Include="src\blocks.cpp" />
+    <ClCompile Include="src\switch.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="buttons.h" />
-    <ClInclude Include="blocks.h" />
-    <ClInclude Include="create_LineButtons.h" />
-    <ClInclude Include="shows.h" />
-    <ClInclude Include="switch.h" />
-    <ClInclude Include="others.h" />
+    <ClInclude Include="src\buttons.h" />
+    <ClInclude Include="src\blocks.h" />
+    <ClInclude Include="src\create_LineButtons.h" />
+    <ClInclude Include="src\shows.h" />
+    <ClInclude Include="src\switch.h" />
+    <ClInclude Include="src\others.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

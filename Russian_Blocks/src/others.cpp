@@ -10,7 +10,7 @@ void initialscores()//初始状态下对文件进行写入
 	int x = MessageBox(newwindow, "确定要清空分数记录吗?", "提示", MB_OKCANCEL);
 	if (x == IDOK)
 	{
-		ofstream OutScores("scores.dat", ios::out | ios::binary);
+		ofstream OutScores("data/scores.dat", ios::out | ios::binary);
 		scoredata blank;
 		for (int i = 0; i < 30; i++)
 		{
@@ -25,7 +25,7 @@ void save_score()//每种分数上限存十个，没满就加，满了舍弃最小值
 	int md = shapes::get_mode();
 	scoredata newdata(md, sc);
 	int count = 0;
-	ifstream ReadScore("scores.dat", ios::in | ios::binary);
+	ifstream ReadScore("data/scores.dat", ios::in | ios::binary);
 	scoredata reader;
 	int i = 0;
 	while (ReadScore&&!ReadScore.eof())
@@ -43,7 +43,7 @@ void save_score()//每种分数上限存十个，没满就加，满了舍弃最小值
 	}
 	if (count < 10)//没有满时的情况直接加
 	{	
-		ofstream OutRecord("scores.dat", ios::in | ios::out | ios::binary);
+		ofstream OutRecord("data/scores.dat", ios::in | ios::out | ios::binary);
 		OutRecord.seekp((md * 10 + count) * sizeof(scoredata));
 		OutRecord.write(reinterpret_cast<const char*>(&newdata), sizeof(scoredata));
 	}
@@ -68,7 +68,7 @@ void save_score()//每种分数上限存十个，没满就加，满了舍弃最小值
 		}
 		if (min < sc)//判断存档里最小的数据是不是比当前的分数还要小
 		{
-			ofstream SaveScores("scores.dat", ios::in | ios::out | ios::binary);
+			ofstream SaveScores("data/scores.dat", ios::in | ios::out | ios::binary);
 			SaveScores.seekp(sign * sizeof(scoredata));
 			SaveScores.write(reinterpret_cast<const char*>(&newdata), sizeof(scoredata));
 			SaveScores.close();
@@ -112,7 +112,7 @@ void select_modes_score()
 }
 void easy_rank()
 {
-	ifstream ReadScore("scores.dat", ios::in | ios::binary);
+	ifstream ReadScore("data/scores.dat", ios::in | ios::binary);
 	scoredata reader;
 	int a[10] = {0};
 	int i = 0;
@@ -152,7 +152,7 @@ void easy_rank()
 }
 void m_rank()
 {
-	ifstream ReadScore("scores.dat", ios::in | ios::binary);
+	ifstream ReadScore("data/scores.dat", ios::in | ios::binary);
 	scoredata reader;
 	int a[10];
 	int i = 0;
@@ -193,7 +193,7 @@ void m_rank()
 }
 void difficult_rank()
 {
-	ifstream ReadScore("scores.dat", ios::in | ios::binary);
+	ifstream ReadScore("data/scores.dat", ios::in | ios::binary);
 	scoredata reader;
 	int a[10];
 	int i = 0;

@@ -25,7 +25,7 @@ void block4::speed_up()
 	if (y + load_size <= stop && !map[x/load_size][y/load_size+1])
 	{
 		mciSendString("close drop", 0, 0, 0);
-		mciSendString("open ./drop.wav alias drop", 0, 0, 0);
+		mciSendString("open ./assets/audio/drop.wav alias drop", 0, 0, 0);
 		mciSendString("play drop", 0, 0, 0);
 		y += load_size;
 	}
@@ -46,7 +46,7 @@ void block4::putimages()
 void block4::refreshmap()
 {		
 	mciSendString("close hit", 0, 0, 0);
-	mciSendString("open ./hit.wav alias hit", 0, 0, 0);
+	mciSendString("open ./assets/audio/hit.wav alias hit", 0, 0, 0);
 	mciSendString("play hit", 0, 0, 0);
 	int a = x / load_size; int b = y / load_size;
 	 map[a][b] = 1;
