@@ -30,7 +30,7 @@ void show_maker()
 	loadimage(&settings, "./assets/images/settings.jpg", 400, 710);
 
 	const char* relevant_info = "关于此游戏";
-	const char* relevant_name = "俄罗斯方块";
+	const char* relevant_name = "Tetris";
 	const char* relevant_data = "软件工程4班 黄超平";
 	const char* relevant_version = "时间:2023年5月";
 	settextcolor(BLACK);
