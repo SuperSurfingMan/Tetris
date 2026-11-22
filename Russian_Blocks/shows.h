@@ -1,0 +1,17 @@
+#pragma once
+void showGameBk();
+void show_maker();
+void show_main_menu();
+void show_score();
+void show_coming_blocks(int);
+void settings();
+void before_start();
+void go_back();
+void game_pause(int);
+void pausing_game();
+void gob_main();
+void detail_load();
+void select_mode();
+void manage_file();
+void save_and_back();
+void initialkeys();
